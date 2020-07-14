@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 img">{% if profile.people.profile_image %}
+          <img src="{{ profile.people.profile_image.url }}"  alt="" class="img-rounded" style="width: auto;height: 30vh;">{% else %}
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvzOpl3-kqfNbPcA_u_qEZcSuvu5Je4Ce_FkTMMjxhB-J1wWin-Q"  alt="" class="img-rounded">{% endif %}
+        </div>
+        <div class="col-md-6 details">
+          <blockquote>
+            <h5>{{ profile.first_name|capfirst }} {{ profile.last_name|capfirst }}</h5>
+            <small><cite title="Source Title">{{ profile.people.address }}  <i class="icon-map-marker"></i></cite></small>
+          </blockquote>
+          <p>
+            {{ profile.people.user.email }} <br>
+            {{ profile.people.user.username }} <br>
+            {{ profile.people.phone }} <br>
+          </p>
+            <p>This account is <i style="color:#1aab1f;">{{ profile.usertype.get_who_display }}</i> Account.</p>
+            {% if request.user == profile.people.user %}
+            <a href="{% url 'update_profile' %}">Update</a> | 
+            <a href="{% url 'change_password' %}">Change Password</a>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+{% endblock content %}

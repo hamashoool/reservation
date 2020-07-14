@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Well Done!</h1>
+    {{ sax|yesno:"sax,khalad" }}
+    <p>booked tabel: {{ yes|capfirst }}</p>
+    <p>booked tabel: {{ user|capfirst }}</p>
+
+    {% if user.usertype.who == "P" %}
+        waa qof
+    {% else %}
+        {% if user.thisusersrestaurant %}
+            {% for table in haa %}
+                {% if table.people.booked %}
+                    <h4>{{ table.people.user }}</h4>
+                    <h5>Booked: {{ table.people.taple }}</h5>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            empty
+        {% endif %}
+    {% endif %}
+{% endblock content %}

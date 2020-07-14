@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container pt-0 mt-0 mx-auto">
+    <form method="post" action=".">
+        {% csrf_token%}
+        <h1 class="display-3">Are you sure? Do you wanna delete table <b style="color: red;">{{ table.name }}</b>?</h1>
+        <p class="text-warning p-1"> <i class="fas fa-exclamation-triangle"></i> If you delete this table you can not bring it back.</p>
+        <button type="submit" class="btn btn-danger">Yes Delete</button>
+        <a href="{{ table.restaurant.get_absolute_url }}" class="btn btn-light">No</a>
+    </form>
+</div>
+          
+{% endblock content %}

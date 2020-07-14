@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://kit.fontawesome.com/0920be8f58.js" crossorigin="anonymous"></script>
+        <title>Sit Well</title>
+        <link rel="stylesheet" href="{% static 'css/bstyle.css' %}">
+    </head>
+    <body>
+        <header>
+            <nav class="hnav">
+                <ul class="ullink">
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        {% if request.user.usertype.who == 'R' %}
+                            <li><a href="{% url 'restaurant_s' %}">Your Restaurant</a></li>
+                        {% else %}
+                            <li><a href="{% url 'restaurant_s' %}">Restaurants</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'register' %}">Create An Account</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="ullogo">
+                    <li><img src="{% static 'img/logo.png' %}" alt=""></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="banner">
+                <h1>Welcome to <span> SitWell</span></h1>
+                <p class="sub">Come and sit well then eat well with our delicious & healthy foods.</p>
+                <form method='GET' class="m-0" action='{% url 'search' %}'><i class="fa fa-search fa-2x" style="color: white;"></i>
+                    <input type="text" name="q" data-toggle="popover" data-placement="bottom" data-content="Press enter to search" class="search" placeholder="Search for restaurants..." value="" style="" data-original-title="" title="" autofocus="autofocus">
+                </form>
+                <br><br><br>
+                {% if not request.user.is_authenticated %}
+                    <p class="res">View all <a href="{% url 'restaurant_s' %}"><i>Restaurants</i></a></p>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load ratings %}
+
+{% block content %}
+
+    <div class="a col-sm-4 col-md-4 col-lg-4">
+        <div class="card" style="width:100%">
+            <img alt="Card image" class="card-img-top" src="{{ restaurant.restaurant_image.url }}" style="width:100%">
+            <div class="card-body">
+            <h4 class="card-title">{{ restaurant.name }}</h4>
+            <p class="card-text">{{ restaurant.description }}</p>
+                {% ratings restaurant %}
+            </div>
+        </div>
+    </div>
+    <div class="a col-sm-8 col-md-8 col-lg-8">
+        <div class="row">
+    {% for table in  restaurant.table_set.all %}
+        {% if request.user.usertype.who == 'R' %}
+            <div class="col-md-5 itemss m-2"{% if table.booked and request.user == table.restaurant.user %} style="background-color: #cdffc6;" {% endif %}>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <p>{{ table.time.time }}</p>
+                    </div>
+                    <div class="col-sm col-md col-lg ">
+                        <h4>{{ table.name }}</h4>
+                        {% if request.user == table.restaurant.user %}
+                            {% if table.booked %}
+                                <i>booked by <a href="{% url 'profile' pk=table.booked_by.id slug=table.booked_by.username %}">{{ table.booked_by.username }}</a></i>
+                            {% endif %}
+                            {% if table.booked and request.user == table.restaurant.user %}
+                            {% else %}
+                                <a href="{% url 'delete_table' pk=table.id %}" class="delete">Delete</a>
+                                <a href="{% url 'update_tables' pk=table.id %}" class="update">update</a>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% if table.booked == False %}
+            <div class="col-md-5 itemss m-2" style="background-color: #f3f3f3;">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <img alt="Card image" class="card-img-top" src="{% static 'img/table.png' %}" style="width:100%">
+                        <a href="{{ table.get_absolute_url }}">Book Now</a>
+                    </div>
+                    <div class="col-sm col-md col-lg ">
+                        <h4>{{ table.name }}</h4>
+                        <p>Available time <b>{{ table.time.time }}</b></p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

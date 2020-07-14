@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" value="Update Restaurant" class="btn btn-outline-info">
+                </form>
+            </div>
+            <div class="col-md">
+                <div class="card" style="width:100%">
+                    <img alt="Card image" class="card-img-top" src="{{ restaurant.restaurant_image.url }}" style="width:100%">
+                    <div class="card-body">
+                    <h4 class="card-title">{{ restaurant.name }}</h4>
+                    <p class="card-text">{{ restaurant.description }}</p>
+                    <a class="btn btn-primary" href="{{ restaurant.get_absolute_url }}">More Detail</a>{% if request.user.restaurant %}
+                    <a class="btn btn-primary" href="{% url 'update_restaurant' pk=restaurant.id slug=restaurant.slug %}">Update</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

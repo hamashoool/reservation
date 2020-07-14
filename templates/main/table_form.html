@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container mt-0 pt-0">
+        <div class="col-8 mx-auto">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message }}
+            </div>
+            {% endfor %}
+            <form method="post" action=".">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Update Table" class="btn btn-outline-info">
+            </form>
+        </div>
+    </div>
+{% endblock content %}
