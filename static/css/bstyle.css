@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(76, 78, 56, 0.5),rgba(73, 80, 47, 0.6)),
+    url('/static/img/5.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    /* animation: slide 50s infinite; */
+}
+
+.banner {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.banner h1{
+    font-size: 60px;
+    color: #ddd;
+    font-weight: 300;
+    margin-bottom: 30px;
+    animation-name: movetoLeft;
+    animation-duration: 2s;
+}
+
+.banner span{
+    font-weight: 700;
+    color: #fff;
+}
+
+.banner p.sub{
+    animation-name: movetoRight;
+    animation-duration: 2s;
+}
+
+.banner p{
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.banner .button{
+    width: 180px;
+    padding: 12px;
+    margin: 20px;
+    border: 2px solid #fff;
+    border-radius: 18px;
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    animation-name: movebtn;
+    animation-duration: 1s;
+    animation-delay: 1.3s;
+    animation-fill-mode: backwards;
+    color: #fff;
+    text-decoration: none;
+}
+
+.banner form{
+    animation: movetoTop 3.6s;
+}
+
+.banner form input.search{
+    background: none;
+    width: 50%;
+    padding: 1%;
+    color: white;
+    border: none;
+    border-bottom: solid #ccc 2px;
+    border-radius: 2px;
+    outline: none;
+    font-size: 16px;
+}
+
+.banner form input.search::placeholder{
+    color: white;
+    font-size: 16px;
+}
+
+.banner p.res{
+    animation: popup 3s backwards;
+    animation-delay: 2s;
+}
+
+.banner p.res a{
+    size: 35px;
+    color: #81cc8b;
+}
+
+.banner p.res a:hover{
+    size: 35px;
+    color: #808080;
+}
+
+.btn-left{
+    background: #fff;
+    color: #444;
+}
+
+.btn-right{
+    background: transparent;
+    color: #eee;
+}
+
+nav.hnav{
+    background: linear-gradient(rgba(96, 100, 44, 0.4),rgba(32, 48, 56, 0.4));
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    padding: 2% 0;
+    border-bottom: #ddd solid 1px;
+    animation: movetoBottom 3.6s;
+}
+
+nav.hnav ul.ullink{
+    transform: translate(-9px, 21px);
+    margin-right: 5%;
+}
+
+nav.hnav ul.ullogo{
+    float: left;
+}
+
+nav.hnav ul.ullogo img{
+    width: 20%;
+    margin-left: 15%;
+}
+
+nav.hnav ul li{
+    display: inline;
+    float: right;
+    color: #fff;
+    margin: 0 2%;
+    font-size: large;
+}
+
+
+@keyframes movetoBottom {
+    0%{
+        transform: translatey(-150px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+nav.hnav ul li a{
+    color: #fff;
+    font-size: large;
+    text-decoration: none;
+}
+
+nav.hnav ul li a:hover{
+    color: #aaa;
+    font-size: large;
+    text-decoration: none;
+}
+
+@keyframes movetoLeft {
+    0%{
+        transform: translatex(-120px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatex(0);
+        opacity: 1;
+    }
+}
+
+@keyframes movetoRight {
+    0%{
+        transform: translatex(150px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatex(0);
+        opacity: 1;
+    }
+}
+
+@keyframes movetoTop {
+    0%{
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popup {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    20%{
+        background: linear-gradient(rgba(76, 78, 56, 0.5),rgba(73, 80, 47, 0.6)),
+        url(2.jpg) center no-repeat;
+        background-size: cover;
+    }
+    40%{
+        background: linear-gradient(rgba(76, 78, 56, 0.5),rgba(73, 80, 47, 0.6)),
+        url(3.jpg) center no-repeat;
+        background-size: cover;
+    }
+    60%{
+        background: linear-gradient(rgba(76, 78, 56, 0.5),rgba(73, 80, 47, 0.6)),
+        url(4.jpg) center no-repeat;
+        background-size: cover;
+    }
+    80%{
+        background: linear-gradient(rgba(76, 78, 56, 0.5),rgba(73, 80, 47, 0.6)),
+        url(5.jpg) center no-repeat;
+        background-size: cover;
+    }
+    100%{
+        background: linear-gradient(rgba(76, 78, 56, 0.5),rgba(73, 80, 47, 0.6)),
+        url(back.jpg) center no-repeat;
+        background-size: cover;
+        
+    }
+}

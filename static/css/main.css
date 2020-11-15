@@ -1,0 +1,414 @@
+body{
+    background: aliceblue;
+}
+
+.main_body{
+    background-color: #e9d6c5;
+    padding: 5.3% 8% 8% 8%;
+    border-radius: 2px;
+    min-height: 100vh;
+}
+
+.main_body-r{
+    background-color: #147ccc;
+    padding:1% 0% 0% 0%;
+    border-radius: 2px;
+    min-height: 100vh;
+    color: white;
+}
+
+.items{
+    padding: 3% 5%;
+}
+
+.button-sec{
+    padding: 3% 5%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+.button-sec-orng{
+    padding: 3% 5%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.button-sec p{
+    margin-left: 25%;
+}
+.button-sec-orng p{
+    margin-left: 25%;
+}
+
+.items input{
+    padding: 2%;
+    width: 100%;
+    border-radius: 3px;
+    border:none;
+}
+
+.button-sec input{
+    padding: 2%;
+    width: 25%;
+    background: blue;
+    border: blue solid 3px;
+    border-radius: 3px;
+    color: white;
+    font-size:medium;
+    cursor: pointer; 
+}
+
+.button-sec input:hover{
+    padding: 2%;
+    width: 25%;
+    background: none;
+    border: blue solid 3px;
+    border-radius: 3px;
+    color: black;
+    font-size:medium;
+    cursor: pointer;
+}
+
+.button-sec-orng input{
+    padding: 2%;
+    width: 25%;
+    background: #e4be92;
+    border: #e4be92 solid 3px;
+    border-radius: 3px;
+    color: black;
+    font-size:medium;
+    cursor: pointer; 
+}
+
+.button-sec-orng input:hover{
+    padding: 2%;
+    width: 25%;
+    background: none;
+    border: #e4be92 solid 3px;
+    border-radius: 3px;
+    color: white;
+    font-size:medium;
+    cursor: pointer;
+}
+
+.right{
+    background: url('/static/img/login.jpg');
+    background-size: 100% 100%;
+}
+.right-r{
+    background: url('/static/img/b.jpg');
+    background-size: 100% 100%;
+}
+
+.or-bt{
+    color: #e4be92;
+}
+
+form.reg .items label{
+    display: none;
+}
+
+form.reg .items strong{
+    color: #fff700;
+    font-size: 95%;
+}
+
+form.reg .items small.text-muted{
+    color: #d5d6d0;
+}
+
+
+/*
+nav
+*/
+
+.bg-brown{
+    background-color: #4a3949;
+}
+
+.bg-darkblue{
+    background-color: #1b3f67;
+}
+a.order-0 img{
+    height: 8vh;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+a.order-0{
+    padding: 0;
+    margin: 0;
+}
+
+/* end of nav */
+
+/* image section */
+section.img-sec{
+    position: relative;
+}
+
+section.img-sec h1{
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    color: white;
+    text-shadow: grey 2px 1px 5px;
+    transform: translate(-50%, -50%);
+    font-weight: 400;
+}
+
+section.img-sec h3{
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    color: #4a3949;
+    text-shadow: #6d7277 2px 1px 5px;
+    transform: translate(-50%, -50%);
+}
+
+section.img-sec img{
+    width: 100%;
+}
+/* end of image section */
+/* restaurants section */
+section.restaurants{
+    margin: 1% auto;
+}
+
+section.restaurants .a{
+    margin: 1% auto;
+}
+/* end of restaurants section */
+
+.color-white{
+    color: aliceblue;
+}
+
+div.tbles {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+}
+div.itemss{
+    background-color: #ececff;
+    color: #2a2a2a;
+    border-radius: 3px;
+}
+
+.container{
+    padding:5%;
+}
+.container .img{
+    text-align:center;
+}
+.container .details{
+    border-left:3px solid #ded4da;
+}
+.container .details p{
+    font-size:15px;
+    font-weight:bold;
+}
+
+/* Search */
+
+#custom-search-input {
+        margin:0;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    #custom-search-input .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    #custom-search-input button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color:#D9230F;
+    }
+
+    .search-query:focus + button {
+        z-index: 3;
+    }
+/*End of Search*/
+
+/*Not found */
+#notfound {
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 410px;
+  width: 100%;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  height: 280px;
+  position: relative;
+  z-index: -1;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 230px;
+  margin: 0px;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: url('/static/img/h2.jpg') no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.notfound h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.notfound p {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.notfound a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #4a3949;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 700;
+  -webkit-box-shadow: 0px 4px 15px -5px #0046d5;
+          box-shadow: 0px 4px 15px -5px #0046d5;
+}
+
+.notfound a:hover {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #4a3949;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 40px;
+  color: #ffc79d;
+  font-weight: 700;
+  -webkit-box-shadow: 0px 4px 15px -5px #0046d5;
+          box-shadow: 0px 4px 15px -5px #0046d5;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .notfound .notfound-404 {
+      height: 142px;
+    }
+    .notfound .notfound-404 h1 {
+      font-size: 112px;
+    }
+}
+
+/*end of not found*/
+
+/* restaurant detail delete and update buttons */
+.delete{
+    padding: 2px;
+    background: red;
+    color: white;
+    border: solid 1px red;
+    border-radius: 3px;
+}
+
+a.delete:hover{
+    padding: 2px;
+    color: red;
+    text-decoration: none;
+    background: none;
+    border: solid 1px red;
+    border-radius: 3px;
+}
+
+.update{
+    padding: 2px;
+    background: rgb(0, 140, 255);
+    color: white;
+    border: solid 1px rgb(0, 140, 255);
+    border-radius: 3px;
+}
+
+a.update:hover{
+    padding: 2px;
+    color: rgb(0, 140, 255);
+    text-decoration: none;
+    background: none;
+    border: solid 1px rgb(0, 140, 255);
+    border-radius: 3px;
+}
+/* end of delete and update */
+
+
+/*taples page card*/
+
+/* end of tables page card */
+
+/* search engine */
+.search{
+    background: none;
+    border: none;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    border-bottom: 2px solid aliceblue;
+    padding-top: 5px;
+    color: white;
+    outline: none;
+}
+
+/* end of search engine */

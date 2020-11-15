@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1030px){
+
+}
+
+@media only screen and (max-width: 770px) {
+    /* image section */
+    section.img-sec{
+        position: relative;
+    }
+
+    section.img-sec h1{
+        position: absolute;
+        top: 40%;
+        left: 25%;
+        color: white;
+        text-shadow: grey 2px 1px 5px;
+        transform: translate(-50%, -50%);
+        font-weight: 300;
+        font-size: xx-large;
+    }
+
+    section.img-sec h3{
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        color: #4a3949;
+        text-shadow: #6d7277 2px 1px 5px;
+        transform: translate(-50%, -50%);
+        font-size: xx-large;
+        font-weight: 400;
+    }
+
+    section.img-sec img{
+        width: 100%;
+    }
+    /* end of image section */
+    a.order-0 img{
+        height: 4vh;
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
+  }
+
